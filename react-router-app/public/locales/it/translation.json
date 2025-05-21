@@ -1,0 +1,16 @@
+{
+  "components": {
+    "screen": {
+      "topBar": {
+        "title": "App react corso Mea World",
+        "languageSwitcher": {
+          "en": "English",
+          "it": "Italiano"
+        }
+      },
+      "footer": {
+        "copyright": "© {{date}} Mea World"
+      }
+    }
+  }
+}

@@ -1,9 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 export const Root = () => {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-svh">
-      <Button onClick={() => alert("Hello")}>Click me</Button>
-    </div>
-  );
+  const { t } = useTranslation();
+
+  return <div></div>;
 };
