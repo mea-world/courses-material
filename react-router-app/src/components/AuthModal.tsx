@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -9,10 +9,11 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { setAuthToken } from '@/lib/axiosInstance'; // Assuming this is the correct path
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { setAuthToken } from "@/lib/axiosInstance"; // Assuming this is the correct path
+import { useTranslation } from "react-i18next";
 
 interface AuthModalProps {
   children: React.ReactNode; // To use a button or icon as a trigger
@@ -21,14 +22,15 @@ interface AuthModalProps {
 }
 
 export function AuthModal({ children, isOpen, onOpenChange }: AuthModalProps) {
-  const [tokenInput, setTokenInput] = useState('');
+  const { t } = useTranslation();
+  const [tokenInput, setTokenInput] = useState("");
 
   const handleSaveToken = () => {
     setAuthToken(tokenInput);
     if (onOpenChange) {
       onOpenChange(false); // Close the modal after saving
     }
-    setTokenInput(''); // Clear the input
+    setTokenInput(""); // Clear the input
   };
 
   return (
@@ -36,36 +38,36 @@ export function AuthModal({ children, isOpen, onOpenChange }: AuthModalProps) {
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Set Authentication Token</DialogTitle>
-          <DialogDescription>
-            Paste your API token here. This will be stored in localStorage.
-          </DialogDescription>
+          <DialogTitle>{t("authModal.title")}</DialogTitle>
+          <DialogDescription>{t("authModal.description")}</DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="token" className="text-right">
-              Token
+              {t("authModal.form.token.label")}
             </Label>
             <Input
               id="token"
               value={tokenInput}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTokenInput(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setTokenInput(e.target.value)
+              }
               className="col-span-3"
-              placeholder="Enter your API token"
+              placeholder={t("authModal.form.token.placeholder")}
             />
           </div>
         </div>
         <DialogFooter>
           <DialogClose asChild>
             <Button type="button" variant="outline">
-              Cancel
+              {t("authModal.buttons.cancel")}
             </Button>
           </DialogClose>
           <Button type="button" onClick={handleSaveToken}>
-            Save Token
+            {t("authModal.buttons.save")}
           </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
   );
-} 
+}

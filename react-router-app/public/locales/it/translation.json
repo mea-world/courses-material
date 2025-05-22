@@ -41,5 +41,19 @@
       "title": "Errore",
       "fetch": "Impossibile recuperare le attività: {{message}}"
     }
+  },
+  "authModal": {
+    "title": "Imposta Token di Autenticazione",
+    "description": "Incolla qui il tuo token API. Verrà memorizzato in localStorage.",
+    "form": {
+      "token": {
+        "label": "Token",
+        "placeholder": "Inserisci il tuo token API"
+      }
+    },
+    "buttons": {
+      "cancel": "Annulla",
+      "save": "Salva Token"
+    }
   }
 }

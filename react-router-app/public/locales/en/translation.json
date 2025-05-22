@@ -42,5 +42,19 @@
       "title": "Error",
       "fetch": "Could not fetch tasks: {{message}}"
     }
+  },
+  "authModal": {
+    "title": "Set Authentication Token",
+    "description": "Paste your API token here. This will be stored in localStorage.",
+    "form": {
+      "token": {
+        "label": "Token",
+        "placeholder": "Enter your API token"
+      }
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save Token"
+    }
   }
 }
