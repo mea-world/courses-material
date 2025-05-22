@@ -84,5 +84,18 @@
     "delete": "Elimina",
     "deleteAll": "Elimina tutte le attività",
     "toggleTitle": "Completa/Annulla"
+  },
+  "taskDetail": {
+    "loading": "Caricamento...",
+    "error": "Errore: {{message}}",
+    "description": "Descrizione",
+    "noDescription": "Nessuna",
+    "dueDate": "Data di scadenza",
+    "priority": "Priorità",
+    "completed": "Completato",
+    "yes": "Sì",
+    "no": "No",
+    "assignedTo": "Assegnato a",
+    "unassigned": "Nessuno"
   }
 }

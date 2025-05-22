@@ -85,5 +85,18 @@
     "delete": "Delete",
     "deleteAll": "Delete all todos",
     "toggleTitle": "Complete/Undo"
+  },
+  "taskDetail": {
+    "loading": "Loading...",
+    "error": "Error: {{message}}",
+    "description": "Description",
+    "noDescription": "None",
+    "dueDate": "Due date",
+    "priority": "Priority",
+    "completed": "Completed",
+    "yes": "Yes",
+    "no": "No",
+    "assignedTo": "Assigned to",
+    "unassigned": "Unassigned"
   }
 }

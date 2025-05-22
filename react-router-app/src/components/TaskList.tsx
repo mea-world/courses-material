@@ -5,6 +5,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import {
   assignTaskToWorker,
   createTask,
@@ -20,6 +21,7 @@ import { TaskTable } from "./TaskList/TaskTable";
 
 const TaskList: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const {
     data: tasks,
     error,
@@ -288,6 +290,7 @@ const TaskList: React.FC = () => {
             assignMutation={assignMutation}
             unassignMutation={unassignMutation}
             onOpenAssignModal={setAssignModalTask}
+            onRowClick={(task) => navigate(`/task/${task.documentId}`)}
           />
         ) : (
           <div className="text-center py-8">

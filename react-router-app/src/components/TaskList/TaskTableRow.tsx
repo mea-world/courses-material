@@ -23,6 +23,11 @@ interface TaskTableRowProps {
     { id: string; workerId: number }
   >;
   onOpenAssignModal?: (task: Task) => void;
+  onRowClick?: (task: Task) => void;
+  workers?: unknown;
+  assigning?: unknown;
+  setAssigning?: unknown;
+  assignMutation?: unknown;
 }
 
 export const TaskTableRow: React.FC<TaskTableRowProps> = ({
@@ -34,8 +39,25 @@ export const TaskTableRow: React.FC<TaskTableRowProps> = ({
   getPriorityBadgeVariant,
   unassignMutation,
   onOpenAssignModal,
+  onRowClick,
 }) => (
-  <TableRow key={task.documentId}>
+  <TableRow
+    key={task.documentId}
+    style={onRowClick ? { cursor: "pointer" } : {}}
+    onClick={
+      onRowClick
+        ? (e) => {
+            if (
+              (e.target as HTMLElement).closest(
+                "button, input, [role=checkbox]"
+              )
+            )
+              return;
+            onRowClick(task);
+          }
+        : undefined
+    }
+  >
     <TableCell>
       <Checkbox
         checked={task.completed}

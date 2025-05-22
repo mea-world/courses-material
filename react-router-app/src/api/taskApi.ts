@@ -25,7 +25,7 @@ export const getTasks = async (): Promise<Task[]> => {
   }
 };
 
-export const getTaskById = async (id: number): Promise<Task> => {
+export const getTaskById = async (id: string): Promise<Task> => {
   try {
     const response = await axiosInstance.get(`/tasks/${id}?populate=*`);
     const parsed = TaskResponseSchema.parse(response.data);

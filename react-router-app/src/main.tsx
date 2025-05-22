@@ -7,7 +7,7 @@ import TasksPage from "./pages/TasksPage";
 import TaskDetailPage from "./pages/TaskDetailPage";
 import WorkersPage from "./pages/WorkersPage";
 import ErrorPage from "./error-page.tsx"; // Assuming this exists or will be created
-import "../i18n"; // Assuming i18n setup
+import "./lib/i18n.ts"; // Assuming i18n setup
 import "./index.css";
 import LocalTodosPage from "./pages/LocalTodosPage";
 

@@ -34,6 +34,7 @@ interface TaskTableProps {
     { id: string; workerId: number }
   >;
   onOpenAssignModal?: (task: Task) => void;
+  onRowClick?: (task: Task) => void;
 }
 
 export const TaskTable: React.FC<TaskTableProps> = ({
@@ -49,6 +50,7 @@ export const TaskTable: React.FC<TaskTableProps> = ({
   assignMutation,
   unassignMutation,
   onOpenAssignModal,
+  onRowClick,
 }) => (
   <Table>
     <TableHeader>
@@ -83,6 +85,7 @@ export const TaskTable: React.FC<TaskTableProps> = ({
           assignMutation={assignMutation}
           unassignMutation={unassignMutation}
           onOpenAssignModal={onOpenAssignModal}
+          onRowClick={onRowClick}
         />
       ))}
     </TableBody>
