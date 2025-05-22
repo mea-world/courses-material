@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useTodoStore } from "@/store/useTodoStore";
+import { useTodoStore } from "@/stores/useTodoStore";
 import { Screen } from "@/components/Screen";
 import { useTranslation } from "react-i18next";
 
