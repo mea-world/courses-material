@@ -2,7 +2,7 @@
   "components": {
     "screen": {
       "topBar": {
-        "title": "React App Mea World Course",
+        "title": "TODO demo",
         "languageSwitcher": {
           "en": "English",
           "it": "Italian"
@@ -24,7 +24,8 @@
       "status": "Status",
       "title": "Title",
       "priority": "Priority",
-      "dueDate": "Due Date"
+      "dueDate": "Due Date",
+      "assignedTo": "Assigned to"
     },
     "task": {
       "aria": {
@@ -41,7 +42,26 @@
     "error": {
       "title": "Error",
       "fetch": "Could not fetch tasks: {{message}}"
-    }
+    },
+    "create": "Create Task",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "save": "Save",
+    "cancel": "Cancel",
+    "createTitle": "Create Task",
+    "editTitle": "Edit Task",
+    "form": {
+      "title": "Title",
+      "description": "Description",
+      "dueDate": "Due Date",
+      "priority": "Priority"
+    },
+    "remove": "Remove",
+    "assign": "Assign",
+    "notAssigned": "Unassigned",
+    "select": "Select...",
+    "assignTo": "Assign to"
   },
   "authModal": {
     "title": "Set Authentication Token",
@@ -56,5 +76,14 @@
       "cancel": "Cancel",
       "save": "Save Token"
     }
+  },
+  "localTodos": {
+    "title": "Local Todos (zustand)",
+    "inputPlaceholder": "Add a new todo",
+    "add": "Add",
+    "empty": "No local todos",
+    "delete": "Delete",
+    "deleteAll": "Delete all todos",
+    "toggleTitle": "Complete/Undo"
   }
 }
