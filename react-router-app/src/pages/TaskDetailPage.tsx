@@ -8,7 +8,6 @@ import { useTranslation } from "react-i18next";
 
 const TaskDetailPage: React.FC = () => {
   const { taskId } = useParams<{ taskId: string }>();
-  console.log(taskId);
   const { t } = useTranslation();
   const {
     data: task,
