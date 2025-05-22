@@ -1,3 +1,46 @@
 {
-  "cta": "Click here"
+  "components": {
+    "screen": {
+      "topBar": {
+        "title": "React App Mea World Course",
+        "languageSwitcher": {
+          "en": "English",
+          "it": "Italian"
+        }
+      },
+      "footer": {
+        "copyright": "© {{date}} Mea World"
+      }
+    }
+  },
+  "cta": "Click here",
+  "nav": {
+    "tasks": "Tasks",
+    "workers": "Workers"
+  },
+  "taskList": {
+    "title": "Task List",
+    "table": {
+      "status": "Status",
+      "title": "Title",
+      "priority": "Priority",
+      "dueDate": "Due Date"
+    },
+    "task": {
+      "aria": {
+        "completed": "Completed",
+        "markAsCompleted": "Mark as completed"
+      }
+    },
+    "priority": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "empty": "No tasks found.",
+    "error": {
+      "title": "Error",
+      "fetch": "Could not fetch tasks: {{message}}"
+    }
+  }
 }

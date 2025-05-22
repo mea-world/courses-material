@@ -166,3 +166,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add global styles here */
+body {
+  font-family: sans-serif;
+}

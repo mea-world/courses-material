@@ -12,5 +12,34 @@
         "copyright": "© {{date}} Mea World"
       }
     }
+  },
+  "nav": {
+    "tasks": "Attività",
+    "workers": "Lavoratori"
+  },
+  "taskList": {
+    "title": "Elenco Attività",
+    "table": {
+      "status": "Stato",
+      "title": "Titolo",
+      "priority": "Priorità",
+      "dueDate": "Data di Scadenza"
+    },
+    "task": {
+      "aria": {
+        "completed": "Completato",
+        "markAsCompleted": "Segna come completato"
+      }
+    },
+    "priority": {
+      "low": "Bassa",
+      "medium": "Media",
+      "high": "Alta"
+    },
+    "empty": "Nessuna attività trovata.",
+    "error": {
+      "title": "Errore",
+      "fetch": "Impossibile recuperare le attività: {{message}}"
+    }
   }
 }
