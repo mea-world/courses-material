@@ -8,29 +8,29 @@ npm create vite@latest project-name -- --template react-ts
 cd project-name
 
 # Install dependencies
-npm install
+yarn
 
 # Run the project locally
-npm run dev
+yarn dev
 ```
 
 ## Recommended Libraries to Install
 
 ```bash
 # State management
-npm install zustand
+yarn add zustand
 
 # API queries and mutations
-npm install @tanstack/react-query
+yarn add @tanstack/react-query
 
 # Form validation
-npm install react-hook-form zod
+yarn add react-hook-form zod
 
 # Translations
-npm install react-i18next i18next
+yarn add react-i18next i18next
 
 # Date utilities
-npm install date-fns
+yarn add date-fns
 
 # UI components (e.g. shadcn)
 npx shadcn-ui@latest init
