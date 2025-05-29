@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
@@ -47,8 +47,9 @@
     },
     "worker": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::worker.worker"
+      "relation": "manyToOne",
+      "target": "api::worker.worker",
+      "inversedBy": "tasks"
     }
   }
 }

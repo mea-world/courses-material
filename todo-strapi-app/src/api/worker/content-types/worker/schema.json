@@ -4,10 +4,11 @@
   "info": {
     "singularName": "worker",
     "pluralName": "workers",
-    "displayName": "worker"
+    "displayName": "worker",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -17,6 +18,12 @@
     "email": {
       "type": "string",
       "required": true
+    },
+    "tasks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::task.task",
+      "mappedBy": "worker"
     }
   }
 }

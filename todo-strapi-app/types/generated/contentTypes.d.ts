@@ -376,12 +376,13 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
+    description: '';
     displayName: 'category';
     pluralName: 'categories';
     singularName: 'category';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -405,12 +406,13 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
 export interface ApiTagTag extends Struct.CollectionTypeSchema {
   collectionName: 'tags';
   info: {
+    description: '';
     displayName: 'tag';
     pluralName: 'tags';
     singularName: 'tag';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -437,7 +439,7 @@ export interface ApiTaskTask extends Struct.CollectionTypeSchema {
     singularName: 'task';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     categories: Schema.Attribute.Relation<
@@ -460,19 +462,20 @@ export interface ApiTaskTask extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    worker: Schema.Attribute.Relation<'oneToOne', 'api::worker.worker'>;
+    worker: Schema.Attribute.Relation<'manyToOne', 'api::worker.worker'>;
   };
 }
 
 export interface ApiWorkerWorker extends Struct.CollectionTypeSchema {
   collectionName: 'workers';
   info: {
+    description: '';
     displayName: 'worker';
     pluralName: 'workers';
     singularName: 'worker';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -486,6 +489,7 @@ export interface ApiWorkerWorker extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    tasks: Schema.Attribute.Relation<'oneToMany', 'api::task.task'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

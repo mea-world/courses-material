@@ -2,7 +2,7 @@
   "components": {
     "screen": {
       "topBar": {
-        "title": "App react corso Mea World",
+        "title": "TODO demo",
         "languageSwitcher": {
           "en": "English",
           "it": "Italiano"
@@ -23,7 +23,8 @@
       "status": "Stato",
       "title": "Titolo",
       "priority": "Priorità",
-      "dueDate": "Data di Scadenza"
+      "dueDate": "Data di Scadenza",
+      "assignedTo": "Assegnato a"
     },
     "task": {
       "aria": {
@@ -40,7 +41,26 @@
     "error": {
       "title": "Errore",
       "fetch": "Impossibile recuperare le attività: {{message}}"
-    }
+    },
+    "create": "Crea Attività",
+    "edit": "Modifica",
+    "delete": "Elimina",
+    "add": "Aggiungi",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "createTitle": "Crea Attività",
+    "editTitle": "Modifica Attività",
+    "form": {
+      "title": "Titolo",
+      "description": "Descrizione",
+      "dueDate": "Data di Scadenza",
+      "priority": "Priorità"
+    },
+    "remove": "Rimuovi",
+    "assign": "Assegna",
+    "notAssigned": "Non assegnato",
+    "select": "Seleziona...",
+    "assignTo": "Assegna a"
   },
   "authModal": {
     "title": "Imposta Token di Autenticazione",
@@ -55,5 +75,27 @@
       "cancel": "Annulla",
       "save": "Salva Token"
     }
+  },
+  "localTodos": {
+    "title": "Attività Locali (zustand)",
+    "inputPlaceholder": "Aggiungi una nuova attività",
+    "add": "Aggiungi",
+    "empty": "Nessuna attività locale",
+    "delete": "Elimina",
+    "deleteAll": "Elimina tutte le attività",
+    "toggleTitle": "Completa/Annulla"
+  },
+  "taskDetail": {
+    "loading": "Caricamento...",
+    "error": "Errore: {{message}}",
+    "description": "Descrizione",
+    "noDescription": "Nessuna",
+    "dueDate": "Data di scadenza",
+    "priority": "Priorità",
+    "completed": "Completato",
+    "yes": "Sì",
+    "no": "No",
+    "assignedTo": "Assegnato a",
+    "unassigned": "Nessuno"
   }
 }

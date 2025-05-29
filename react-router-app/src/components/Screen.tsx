@@ -30,12 +30,23 @@ export const Screen: React.FC<ScreenProps> = ({ children }) => {
           <span className="text-xl font-bold">
             {t("components.screen.topBar.title")}
           </span>
-          <Link to="/" className="hover:text-primary">{t("nav.tasks")}</Link>
-          <Link to="/workers" className="hover:text-primary">{t("nav.workers")}</Link>
+          <Link to="/" className="hover:text-primary">
+            {t("nav.tasks")}
+          </Link>
+          <Link to="/workers" className="hover:text-primary">
+            {t("nav.workers")}
+          </Link>
+          <Link to="/local-todos" className="hover:text-primary">
+            Local Todos
+          </Link>
         </div>
         <div className="flex items-center space-x-2">
           <AuthModal isOpen={isAuthModalOpen} onOpenChange={setIsAuthModalOpen}>
-            <Button variant="outline" size="icon" onClick={() => setIsAuthModalOpen(true)}>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setIsAuthModalOpen(true)}
+            >
               <KeyRound size={20} />
             </Button>
           </AuthModal>
