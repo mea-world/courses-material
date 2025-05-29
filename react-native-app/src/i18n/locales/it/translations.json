@@ -9,6 +9,11 @@
       "total_quantity": "Quantità Totale: {{count}}"
     }
   },
+  "navigation": {
+    "home": "Home",
+    "cartonList": "Cartoni",
+    "game": "Tic Tac Toe"
+  },
   "screens": {
     "HomeScreen": {
       "title": "Home",
@@ -19,8 +24,7 @@
       "description": "Qui puoi vedere la lista degli UPC."
     },
     "GameScreen": {
-      "title": "Tic Tac Toe",
-      "description": "Gioca a Tic Tac Toe con un amico!",
+      "title": "Gioca con un amico ☺️",
       "restart": "Riavvia",
       "gameStatus": {
         "draw": "Pareggio!",

@@ -43,10 +43,7 @@ export const GameScreen = () => {
   };
 
   return (
-    <Screen
-      title={t("screens.GameScreen.title")}
-      description={t("screens.GameScreen.description")}
-    >
+    <Screen title={t("screens.GameScreen.title")}>
       <GameStatus currentPlayer={currentPlayer} winner={winner} />
       <Board
         board={board}

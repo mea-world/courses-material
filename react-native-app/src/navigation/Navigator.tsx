@@ -9,6 +9,7 @@ import { GameScreen } from "@/screens/GameScreen";
 import { Home, Package } from "lucide-react-native";
 import { CartonListScreen } from "@/screens/CartonListScreen";
 import { CartonDetailScreen } from "@/screens/CartonDetailScreen";
+import { useTranslation } from "react-i18next";
 
 const CartonNavigator = () => {
   const Stack = createNativeStackNavigator<CartonNavigatorParamList>();
@@ -34,6 +35,7 @@ const CartonNavigator = () => {
 
 export const AppNavigator = () => {
   const Tab = createBottomTabNavigator<TabParamList>();
+  const { t } = useTranslation();
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -53,6 +55,7 @@ export const AppNavigator = () => {
         <Tab.Screen
           name="GameScreen"
           options={{
+            title: t("navigation.game"),
             tabBarIcon: ({ color, size }) => <Home color={color} size={size} />,
           }}
           component={GameScreen}
@@ -60,6 +63,7 @@ export const AppNavigator = () => {
         <Tab.Screen
           name="CartonNavigator"
           options={{
+            title: t("navigation.cartonList"),
             headerShown: false,
             tabBarIcon: ({ color, size, focused }) => (
               <Package color={color} size={size} />
