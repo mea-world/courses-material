@@ -2,11 +2,7 @@ import { Config } from "tailwindcss";
 import { hairlineWidth } from "nativewind/theme";
 
 const config: Config = {
-  content: [
-    "./App.tsx",
-    "./components/**/*.{js,jsx,ts,tsx}",
-    "./screens/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./App.tsx", "./src/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
