@@ -5,7 +5,7 @@
       "en": "Inglese"
     },
     "CartonCard": {
-      "box_id": "Box ID: {{id}}",
+      "box_id": "Carton ID: {{id}}",
       "total_quantity": "Quantità Totale: {{count}}"
     }
   },
@@ -20,8 +20,9 @@
       "description": "Questa è la schermata principale dell'applicazione."
     },
     "CartonListScreen": {
-      "title": "Lista UPC",
-      "description": "Qui puoi vedere la lista degli UPC."
+      "title": "Lista Carton",
+      "description": "Qui puoi vedere la lista dei carton.",
+      "addCarton": "Aggiungi Carton"
     },
     "GameScreen": {
       "title": "Gioca con un amico ☺️",
@@ -31,6 +32,12 @@
         "winner": "Vincitore: {{winner}}",
         "turn": "Turno di: {{player}}"
       }
+    },
+    "CartonDetailScreen": {
+      "title": "Dettaglio Carton #{{cartonId}}",
+      "notFound": "Carton non trovato",
+      "noUPCs": "Nessun UPC in questo carton ancora.",
+      "addUPCPlaceholder": "Inserisci codice UPC"
     }
   }
 }

@@ -1,14 +1,15 @@
 import { Text } from "@/components/ui/text";
-import { useNavigation } from "@react-navigation/native";
-import { FlatList, View } from "react-native";
-import { useUPCStore } from "@/hooks/useUPCStore";
+import { FlatList } from "react-native";
+import { useCartonStore } from "@/hooks/useCartonStore";
 import { useTranslation } from "react-i18next";
 import { Screen } from "@/components/Screen";
 import { CartonCard } from "@/components/CartonCard";
+import { Button } from "@/components/ui/button";
+import { Plus } from "lucide-react-native";
 
 export const CartonListScreen = () => {
-  const navigation = useNavigation();
-  const boxes = useUPCStore((state) => state.boxes);
+  const boxes = useCartonStore((state) => state.boxes);
+  const addCarton = useCartonStore((state) => state.addCarton);
   const { t } = useTranslation();
 
   return (
@@ -16,13 +17,16 @@ export const CartonListScreen = () => {
       title={t("screens.CartonListScreen.title")}
       description={t("screens.CartonListScreen.description")}
     >
-      <View className="gap-4">
-        <FlatList
-          data={boxes}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <CartonCard {...item} />}
-        />
-      </View>
+      <Button onPress={addCarton} className="flex-row gap-2">
+        <Plus size={18} color="white" />
+        <Text>{t("screens.CartonListScreen.addCarton")}</Text>
+      </Button>
+      <FlatList
+        data={boxes}
+        keyExtractor={(item) => item.id}
+        contentContainerClassName="gap-4 mt-4"
+        renderItem={({ item }) => <CartonCard {...item} />}
+      />
     </Screen>
   );
 };

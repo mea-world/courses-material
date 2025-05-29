@@ -18,10 +18,12 @@ export const Screen = ({
   ...props
 }: ScreenProps) => {
   return (
-    <View className={cn("flex-1 p-4", className)} {...props}>
-      <Text className="text-2xl font-bold mb-4">{title}</Text>
-      <Text className="text-md text-muted-foreground mb-4">{description}</Text>
-      {children}
+    <View className={cn("flex-1 p-4 gap-4", className)} {...props}>
+      {title && <Text className="text-2xl font-bold">{title}</Text>}
+      {description && (
+        <Text className="text-md text-muted-foreground">{description}</Text>
+      )}
+      <View>{children}</View>
     </View>
   );
 };

@@ -3,10 +3,10 @@ import { persist } from "zustand/middleware";
 import { produce } from "immer";
 import { UPC, Carton } from "./types";
 
-type UPCStore = {
+type CartonStore = {
   boxes: Carton[];
-  addBox: (id: string, UPCList: UPC[]) => void;
-  removeBox: (id: string) => void;
+  addCarton: () => void;
+  removeCarton: (id: string) => void;
   addUPCToBox: (params: { boxId: string; UPC: UPC }) => void;
   removeUPCFromBox: (params: { boxId: string; UPCKey: string }) => void;
   reset: () => void;
@@ -17,7 +17,7 @@ type UPCStore = {
   }) => void;
 };
 
-export const useUPCStore = create<UPCStore>()(
+export const useCartonStore = create<CartonStore>()(
   persist(
     (set) => ({
       boxes: [
@@ -32,23 +32,24 @@ export const useUPCStore = create<UPCStore>()(
         },
       ],
 
-      addBox: (id: string, UPCList: UPC[]) =>
+      addCarton: () =>
         set(
-          produce((state: UPCStore) => {
-            state.boxes.push({ id, UPCList });
+          produce((state: CartonStore) => {
+            const randomId = Math.random().toString(36).substring(2, 15);
+            state.boxes.push({ id: randomId, UPCList: [] });
           })
         ),
 
-      removeBox: (id: string) =>
+      removeCarton: (id: string) =>
         set(
-          produce((state: UPCStore) => {
+          produce((state: CartonStore) => {
             state.boxes = state.boxes.filter((box) => box.id !== id);
           })
         ),
 
       addUPCToBox: (params: { boxId: string; UPC: UPC }) =>
         set(
-          produce((state: UPCStore) => {
+          produce((state: CartonStore) => {
             const box = state.boxes.find((b) => b.id === params.boxId);
             if (box) {
               box.UPCList.push(params.UPC);
@@ -58,7 +59,7 @@ export const useUPCStore = create<UPCStore>()(
 
       removeUPCFromBox: (params: { boxId: string; UPCKey: string }) =>
         set(
-          produce((state: UPCStore) => {
+          produce((state: CartonStore) => {
             const box = state.boxes.find((b) => b.id === params.boxId);
             if (box) {
               box.UPCList = box.UPCList.filter(
@@ -74,7 +75,7 @@ export const useUPCStore = create<UPCStore>()(
         quantity: number;
       }) =>
         set(
-          produce((state: UPCStore) => {
+          produce((state: CartonStore) => {
             const box = state.boxes.find((b) => b.id === params.boxId);
             if (box) {
               const upc = box.UPCList.find((u) => u.key === params.UPCKey);
@@ -87,7 +88,7 @@ export const useUPCStore = create<UPCStore>()(
 
       reset: () =>
         set(
-          produce((state: UPCStore) => {
+          produce((state: CartonStore) => {
             state.boxes = [];
           })
         ),

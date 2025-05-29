@@ -1,1 +1,33 @@
-{}
+{
+  "components": {
+    "languageSwitcher": {
+      "it": "Italiano",
+      "en": "Inglese"
+    },
+    "CartonCard": {
+      "box_id": "Carton ID: {{id}}",
+      "total_quantity": "Total Quantity: {{count}}"
+    }
+  },
+  "screens": {
+    "HomeScreen": {
+      "title": "Home",
+      "description": "This is the main screen of the application."
+    },
+    "CartonListScreen": {
+      "title": "Carton List",
+      "description": "Here you can see the list of cartons.",
+      "addCarton": "Add Carton"
+    },
+    "GameScreen": {
+      "title": "Game",
+      "description": "Here you can play the game."
+    },
+    "CartonDetailScreen": {
+      "title": "Carton Detail #{{cartonId}}",
+      "notFound": "Carton not found",
+      "noUPCs": "No UPCs in this carton yet.",
+      "addUPCPlaceholder": "Enter UPC code"
+    }
+  }
+}
