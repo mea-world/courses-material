@@ -13,6 +13,8 @@ import { useTranslation } from "react-i18next";
 
 const CartonNavigator = () => {
   const Stack = createNativeStackNavigator<CartonNavigatorParamList>();
+  const { t } = useTranslation();
+
   return (
     <Stack.Navigator
       screenOptions={{
@@ -27,8 +29,20 @@ const CartonNavigator = () => {
         ),
       }}
     >
-      <Stack.Screen name="CartonListScreen" component={CartonListScreen} />
-      <Stack.Screen name="CartonDetailScreen" component={CartonDetailScreen} />
+      <Stack.Screen
+        name="CartonListScreen"
+        options={{ title: t("screens.CartonListScreen.navigationTitle") }}
+        component={CartonListScreen}
+      />
+      <Stack.Screen
+        name="CartonDetailScreen"
+        options={({ route }) => ({
+          title: t("screens.CartonDetailScreen.navigationTitle", {
+            cartonId: route.params.cartonId,
+          }),
+        })}
+        component={CartonDetailScreen}
+      />
     </Stack.Navigator>
   );
 };
@@ -36,6 +50,7 @@ const CartonNavigator = () => {
 export const AppNavigator = () => {
   const Tab = createBottomTabNavigator<TabParamList>();
   const { t } = useTranslation();
+
   return (
     <NavigationContainer>
       <Tab.Navigator

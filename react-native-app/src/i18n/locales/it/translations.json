@@ -20,9 +20,10 @@
       "description": "Questa è la schermata principale dell'applicazione."
     },
     "CartonListScreen": {
-      "title": "Lista Carton",
-      "description": "Qui puoi vedere la lista dei carton.",
-      "addCarton": "Aggiungi Carton"
+      "navigationTitle": "Cartoni",
+      "title": "Lista cartoni",
+      "description": "Qui puoi vedere la lista dei cartoni.",
+      "addCarton": "Aggiungi cartoni"
     },
     "GameScreen": {
       "title": "Gioca con un amico ☺️",
@@ -34,9 +35,10 @@
       }
     },
     "CartonDetailScreen": {
-      "title": "Dettaglio Carton #{{cartonId}}",
-      "notFound": "Carton non trovato",
-      "noUPCs": "Nessun UPC in questo carton ancora.",
+      "navigationTitle": "Cartone #{{cartonId}}",
+      "title": "Dettaglio cartone #{{cartonId}}",
+      "notFound": "Cartone non trovato",
+      "noUPCs": "Nessun UPC in questo cartone ancora.",
       "addUPCPlaceholder": "Inserisci codice UPC"
     }
   }
