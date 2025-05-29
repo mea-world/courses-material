@@ -27,7 +27,7 @@ export const LanguageSwitcher = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Globe className="text-foreground" size={24} strokeWidth={1.25} />
+        <Globe className="text-foreground mr-3" size={24} />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-20">
         <DropdownMenuLabel>

@@ -1,10 +1,28 @@
 import { Text } from "@/components/ui/text";
-import { View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { FlatList, View } from "react-native";
+import { useUPCStore } from "@/hooks/useUPCStore";
+import { useTranslation } from "react-i18next";
+import { Screen } from "@/components/Screen";
+import { UPCContainerCard } from "@/components/UPCContainerCard";
 
 export const UPCListScreen = () => {
+  const navigation = useNavigation();
+  const boxes = useUPCStore((state) => state.boxes);
+  const { t } = useTranslation();
+
   return (
-    <View>
-      <Text>UPC List</Text>
-    </View>
+    <Screen
+      title={t("screens.UPCListScreen.title")}
+      description={t("screens.UPCListScreen.description")}
+    >
+      <View className="gap-4">
+        <FlatList
+          data={boxes}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <UPCContainerCard {...item} />}
+        />
+      </View>
+    </Screen>
   );
 };

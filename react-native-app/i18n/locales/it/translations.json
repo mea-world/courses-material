@@ -3,6 +3,20 @@
     "languageSwitcher": {
       "it": "Italiano",
       "en": "Inglese"
+    },
+    "UPCContainerCard": {
+      "box_id": "Box ID: {{id}}",
+      "total_quantity": "Quantità Totale: {{count}}"
+    }
+  },
+  "screens": {
+    "HomeScreen": {
+      "title": "Home",
+      "description": "Questa è la schermata principale dell'applicazione."
+    },
+    "UPCListScreen": {
+      "title": "Lista UPC",
+      "description": "Qui puoi vedere la lista degli UPC."
     }
   }
 }

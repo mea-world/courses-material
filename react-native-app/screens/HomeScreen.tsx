@@ -1,9 +1,14 @@
+import { Screen } from "@/components/Screen";
+import { useTranslation } from "react-i18next";
 import { Text, View } from "react-native";
 
 export const HomeScreen = () => {
+  const { t } = useTranslation();
+
   return (
-    <View className="flex-1 items-center justify-center">
-      <Text>Home Screen</Text>
-    </View>
+    <Screen
+      title={t("screens.HomeScreen.title")}
+      description={t("screens.HomeScreen.description")}
+    ></Screen>
   );
 };
