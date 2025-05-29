@@ -1,13 +1,18 @@
 {
   "components": {
     "languageSwitcher": {
-      "it": "Italiano",
-      "en": "Inglese"
+      "it": "Italian",
+      "en": "English"
     },
     "CartonCard": {
       "box_id": "Carton ID: {{id}}",
       "total_quantity": "Total Quantity: {{count}}"
     }
+  },
+  "navigation": {
+    "home": "Home",
+    "cartonList": "Cartons",
+    "game": "Tic Tac Toe"
   },
   "screens": {
     "HomeScreen": {
@@ -15,15 +20,22 @@
       "description": "This is the main screen of the application."
     },
     "CartonListScreen": {
+      "navigationTitle": "Cartons",
       "title": "Carton List",
       "description": "Here you can see the list of cartons.",
-      "addCarton": "Add Carton"
+      "addCarton": "Add cartons"
     },
     "GameScreen": {
-      "title": "Game",
-      "description": "Here you can play the game."
+      "title": "Play with a friend ☺️",
+      "restart": "Restart",
+      "gameStatus": {
+        "draw": "Draw!",
+        "winner": "Winner: {{winner}}",
+        "turn": "Turn: {{player}}"
+      }
     },
     "CartonDetailScreen": {
+      "navigationTitle": "Carton #{{cartonId}}",
       "title": "Carton Detail #{{cartonId}}",
       "notFound": "Carton not found",
       "noUPCs": "No UPCs in this carton yet.",
