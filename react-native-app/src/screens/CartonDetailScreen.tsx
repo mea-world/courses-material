@@ -2,7 +2,7 @@ import { Screen } from "@/components/Screen";
 import { Text } from "@/components/ui/text";
 import { CartonNavigatorProps } from "@/navigation";
 import { View, FlatList, Pressable } from "react-native";
-import { useCartonStore } from "@/hooks/useCartonStore";
+import { useCartonStore } from "@/store/useCartonStore";
 import { useTranslation } from "react-i18next";
 import {
   PlusCircle,
@@ -25,16 +25,16 @@ export const CartonDetailScreen = ({
   const { t } = useTranslation();
   const [newUpc, setNewUpc] = React.useState("");
 
-  const carton = useCartonStore((state) =>
-    state.boxes.find((box) => box.id === cartonId)
-  );
-  const updateUPCQuantity = useCartonStore((state) => state.updateUPCQuantity);
-  const removeUPCFromBox = useCartonStore((state) => state.removeUPCFromBox);
-  const addUPCToBox = useCartonStore((state) => state.addUPCToBox);
+  const { boxes, updateUPCQuantity, removeUPCFromBox, addUPCToBox } =
+    useCartonStore();
+
+  const carton = boxes.find((box) => box.id === cartonId);
 
   const handleAddUPC = () => {
     if (newUpc.trim() === "") return;
-    const upcExists = carton?.UPCList.some((upc) => upc.key === newUpc.trim());
+    const upcExists = carton?.CartonList.some(
+      (upc) => upc.key === newUpc.trim()
+    );
     if (upcExists) {
       console.log("UPC already exists in this carton.");
       setNewUpc("");
@@ -76,7 +76,7 @@ export const CartonDetailScreen = ({
       </View>
 
       <FlatList
-        data={carton.UPCList}
+        data={carton.CartonList}
         keyExtractor={(item) => item.key}
         renderItem={({ item }) => (
           <View className="flex-row items-center justify-between p-4 my-2 border border-gray-300 rounded-lg">

@@ -1,7 +1,8 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 import { produce } from "immer";
-import { UPC, Carton } from "./types";
+import { UPC, Carton } from "@/types";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type CartonStore = {
   boxes: Carton[];
@@ -23,7 +24,7 @@ export const useCartonStore = create<CartonStore>()(
       boxes: [
         {
           id: "1",
-          UPCList: [
+          CartonList: [
             {
               key: "1234567890",
               quantity: 10,
@@ -36,7 +37,7 @@ export const useCartonStore = create<CartonStore>()(
         set(
           produce((state: CartonStore) => {
             const randomId = Math.random().toString(36).substring(2, 15);
-            state.boxes.push({ id: randomId, UPCList: [] });
+            state.boxes.push({ id: randomId, CartonList: [] });
           })
         ),
 
@@ -52,7 +53,7 @@ export const useCartonStore = create<CartonStore>()(
           produce((state: CartonStore) => {
             const box = state.boxes.find((b) => b.id === params.boxId);
             if (box) {
-              box.UPCList.push(params.UPC);
+              box.CartonList.push(params.UPC);
             }
           })
         ),
@@ -62,7 +63,7 @@ export const useCartonStore = create<CartonStore>()(
           produce((state: CartonStore) => {
             const box = state.boxes.find((b) => b.id === params.boxId);
             if (box) {
-              box.UPCList = box.UPCList.filter(
+              box.CartonList = box.CartonList.filter(
                 (upc) => upc.key !== params.UPCKey
               );
             }
@@ -78,7 +79,7 @@ export const useCartonStore = create<CartonStore>()(
           produce((state: CartonStore) => {
             const box = state.boxes.find((b) => b.id === params.boxId);
             if (box) {
-              const upc = box.UPCList.find((u) => u.key === params.UPCKey);
+              const upc = box.CartonList.find((u) => u.key === params.UPCKey);
               if (upc) {
                 upc.quantity = params.quantity;
               }
@@ -95,6 +96,7 @@ export const useCartonStore = create<CartonStore>()(
     }),
     {
       name: "upc-storage",
+      storage: createJSONStorage(() => AsyncStorage),
     }
   )
 );

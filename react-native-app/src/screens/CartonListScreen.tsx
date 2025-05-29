@@ -1,6 +1,6 @@
 import { Text } from "@/components/ui/text";
 import { FlatList } from "react-native";
-import { useCartonStore } from "@/hooks/useCartonStore";
+import { useCartonStore } from "@/store/useCartonStore";
 import { useTranslation } from "react-i18next";
 import { Screen } from "@/components/Screen";
 import { CartonCard } from "@/components/CartonCard";

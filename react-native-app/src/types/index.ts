@@ -9,3 +9,13 @@ export interface WinnerResult {
   winner: Winner;
   line: number[] | null;
 }
+
+export type UPC = {
+  key: string;
+  quantity: number;
+};
+
+export type Carton = {
+  id: string;
+  CartonList: UPC[];
+};

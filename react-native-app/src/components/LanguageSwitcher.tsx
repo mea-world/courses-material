@@ -40,37 +40,6 @@ export const LanguageSwitcher = () => {
             </DropdownMenuItem>
           ))}
         </DropdownMenuLabel>
-        {/* <DropdownMenuLabel>My Account</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Text>Team</Text>
-          </DropdownMenuItem>
-          <DropdownMenuSub>
-            <DropdownMenuSubTrigger>
-              <Text>Invite users</Text>
-            </DropdownMenuSubTrigger>
-          </DropdownMenuSub>
-          <DropdownMenuItem>
-            <Text>New Team</Text>
-            <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <Text>GitHub</Text>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Text>Support</Text>
-        </DropdownMenuItem>
-        <DropdownMenuItem disabled>
-          <Text>API</Text>
-        </DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <Text>Log out</Text>
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-        </DropdownMenuItem> */}
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -3,6 +3,7 @@
     "components": "@/components",
     "lib": "@/lib",
     "types": "@/types",
-    "utils": "@/utils"
+    "utils": "@/utils",
+    "store": "@/store"
   }
 }

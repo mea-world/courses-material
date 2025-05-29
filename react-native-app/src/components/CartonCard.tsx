@@ -1,16 +1,16 @@
-import { Carton } from "@/hooks/useCartonStore/types";
+import { Carton } from "@/types";
 import { CartonNavigatorParamList } from "@/navigation";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
 import { Pressable, View } from "react-native";
 import { Text } from "./ui/text";
-import { useCartonStore } from "@/hooks/useCartonStore";
+import { useCartonStore } from "@/store/useCartonStore";
 import { Trash2 } from "lucide-react-native";
 
 type UPCContainerProps = Carton;
 
-export const CartonCard = ({ id, UPCList }: UPCContainerProps) => {
+export const CartonCard = ({ id, CartonList }: UPCContainerProps) => {
   const { t } = useTranslation();
   const navigation =
     useNavigation<
@@ -31,7 +31,7 @@ export const CartonCard = ({ id, UPCList }: UPCContainerProps) => {
           </Text>
           <Text className="text-sm font-medium">
             {t("components.CartonCard.total_quantity", {
-              count: UPCList.reduce((sum, item) => sum + item.quantity, 0),
+              count: CartonList.reduce((sum, item) => sum + item.quantity, 0),
             })}
           </Text>
         </Pressable>

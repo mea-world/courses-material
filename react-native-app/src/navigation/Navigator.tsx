@@ -23,7 +23,6 @@ const CartonNavigator = () => {
         },
         headerRight: () => (
           <View className="flex-row items-center gap-2">
-            {/* <ThemeToggle /> */}
             <LanguageSwitcher />
           </View>
         ),
@@ -61,7 +60,6 @@ export const AppNavigator = () => {
           },
           headerRight: () => (
             <View className="flex-row items-center gap-2">
-              {/* <ThemeToggle /> */}
               <LanguageSwitcher />
             </View>
           ),
