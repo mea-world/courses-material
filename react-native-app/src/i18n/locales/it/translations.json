@@ -19,8 +19,14 @@
       "description": "Qui puoi vedere la lista degli UPC."
     },
     "GameScreen": {
-      "title": "Gioco",
-      "description": "Qui puoi giocare al gioco."
+      "title": "Tic Tac Toe",
+      "description": "Gioca a Tic Tac Toe con un amico!",
+      "restart": "Riavvia",
+      "gameStatus": {
+        "draw": "Pareggio!",
+        "winner": "Vincitore: {{winner}}",
+        "turn": "Turno di: {{player}}"
+      }
     }
   }
 }

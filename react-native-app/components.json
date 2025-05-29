@@ -1,6 +1,8 @@
 {
   "aliases": {
     "components": "@/components",
-    "lib": "@/lib"
+    "lib": "@/lib",
+    "types": "@/types",
+    "utils": "@/utils"
   }
 }
