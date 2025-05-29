@@ -17,8 +17,12 @@ import { useColorScheme } from "./lib/useColorScheme";
 import { StatusBar } from "expo-status-bar";
 import "./i18n";
 import { useTranslation } from "react-i18next";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { UPCStackNavigator } from "./screens/UPCStackNavigator";
+import { BackButton } from "./components/BackButton";
+import { Home, Package } from "lucide-react-native";
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const useIsomorphicLayoutEffect =
   Platform.OS === "web" && typeof window === "undefined"
@@ -52,14 +56,15 @@ function App() {
     hasMounted.current = true;
   }, []);
 
-  const { t } = useTranslation();
-
   return (
     <ThemeProvider value={colorScheme === "dark" ? DARK_THEME : LIGHT_THEME}>
       <NavigationContainer>
-        <Stack.Navigator
+        <Tab.Navigator
           initialRouteName="Home"
           screenOptions={{
+            headerLeft: () => {
+              return <BackButton />;
+            },
             headerRight: () => (
               <View className="flex-row items-center gap-2">
                 {/* <ThemeToggle /> */}
@@ -68,8 +73,25 @@ function App() {
             ),
           }}
         >
-          <Stack.Screen name="Home" component={HomeScreen} />
-        </Stack.Navigator>
+          <Tab.Screen
+            name="Home"
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Home color={color} size={size} />
+              ),
+            }}
+            component={HomeScreen}
+          />
+          <Tab.Screen
+            name="UPC"
+            options={{
+              tabBarIcon: ({ color, size, focused }) => (
+                <Package color={color} size={size} />
+              ),
+            }}
+            component={UPCStackNavigator}
+          />
+        </Tab.Navigator>
       </NavigationContainer>
       <PortalHost />
       <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
