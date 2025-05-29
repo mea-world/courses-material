@@ -4,7 +4,7 @@
       "it": "Italiano",
       "en": "Inglese"
     },
-    "UPCContainerCard": {
+    "CartonCard": {
       "box_id": "Box ID: {{id}}",
       "total_quantity": "Quantità Totale: {{count}}"
     }
@@ -14,9 +14,13 @@
       "title": "Home",
       "description": "Questa è la schermata principale dell'applicazione."
     },
-    "UPCListScreen": {
+    "CartonListScreen": {
       "title": "Lista UPC",
       "description": "Qui puoi vedere la lista degli UPC."
+    },
+    "GameScreen": {
+      "title": "Gioco",
+      "description": "Qui puoi giocare al gioco."
     }
   }
 }

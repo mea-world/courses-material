@@ -1,10 +1,10 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { produce } from "immer";
-import { UPC, UPCContainer } from "./types";
+import { UPC, Carton } from "./types";
 
 type UPCStore = {
-  boxes: UPCContainer[];
+  boxes: Carton[];
   addBox: (id: string, UPCList: UPC[]) => void;
   removeBox: (id: string) => void;
   addUPCToBox: (params: { boxId: string; UPC: UPC }) => void;

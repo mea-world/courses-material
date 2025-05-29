@@ -1,26 +1,19 @@
-import "./global.css";
-import * as React from "react";
-import { View, Text, Platform } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
-  NavigationContainer,
-  Theme,
-  DefaultTheme,
   DarkTheme,
+  DefaultTheme,
+  Theme,
   ThemeProvider,
 } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { HomeScreen } from "./screens/HomeScreen";
 import { PortalHost } from "@rn-primitives/portal";
-import { LanguageSwitcher } from "./components/LanguageSwitcher";
-import { NAV_THEME } from "./lib/constants";
-import { useColorScheme } from "./lib/useColorScheme";
 import { StatusBar } from "expo-status-bar";
-import "./i18n";
-import { useTranslation } from "react-i18next";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { UPCStackNavigator } from "./screens/UPCStackNavigator";
-import { BackButton } from "./components/BackButton";
-import { Home, Package } from "lucide-react-native";
+import * as React from "react";
+import { Platform } from "react-native";
+import "./global.css";
+import "./src/i18n";
+import { NAV_THEME } from "./src/lib/constants";
+import { useColorScheme } from "./src/lib/useColorScheme";
+import { AppNavigator } from "./src/navigation/Navigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -58,41 +51,7 @@ function App() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DARK_THEME : LIGHT_THEME}>
-      <NavigationContainer>
-        <Tab.Navigator
-          initialRouteName="Home"
-          screenOptions={{
-            headerLeft: () => {
-              return <BackButton />;
-            },
-            headerRight: () => (
-              <View className="flex-row items-center gap-2">
-                {/* <ThemeToggle /> */}
-                <LanguageSwitcher />
-              </View>
-            ),
-          }}
-        >
-          <Tab.Screen
-            name="Home"
-            options={{
-              tabBarIcon: ({ color, size }) => (
-                <Home color={color} size={size} />
-              ),
-            }}
-            component={HomeScreen}
-          />
-          <Tab.Screen
-            name="UPC"
-            options={{
-              tabBarIcon: ({ color, size, focused }) => (
-                <Package color={color} size={size} />
-              ),
-            }}
-            component={UPCStackNavigator}
-          />
-        </Tab.Navigator>
-      </NavigationContainer>
+      <AppNavigator />
       <PortalHost />
       <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
     </ThemeProvider>

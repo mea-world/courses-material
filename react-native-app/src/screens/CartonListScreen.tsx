@@ -4,23 +4,23 @@ import { FlatList, View } from "react-native";
 import { useUPCStore } from "@/hooks/useUPCStore";
 import { useTranslation } from "react-i18next";
 import { Screen } from "@/components/Screen";
-import { UPCContainerCard } from "@/components/UPCContainerCard";
+import { CartonCard } from "@/components/CartonCard";
 
-export const UPCListScreen = () => {
+export const CartonListScreen = () => {
   const navigation = useNavigation();
   const boxes = useUPCStore((state) => state.boxes);
   const { t } = useTranslation();
 
   return (
     <Screen
-      title={t("screens.UPCListScreen.title")}
-      description={t("screens.UPCListScreen.description")}
+      title={t("screens.CartonListScreen.title")}
+      description={t("screens.CartonListScreen.description")}
     >
       <View className="gap-4">
         <FlatList
           data={boxes}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <UPCContainerCard {...item} />}
+          renderItem={({ item }) => <CartonCard {...item} />}
         />
       </View>
     </Screen>

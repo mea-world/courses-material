@@ -3,7 +3,7 @@ export type UPC = {
   quantity: number;
 };
 
-export type UPCContainer = {
+export type Carton = {
   id: string;
   UPCList: UPC[];
 };
