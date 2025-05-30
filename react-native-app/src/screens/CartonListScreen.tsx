@@ -8,8 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react-native";
 
 export const CartonListScreen = () => {
-  const boxes = useCartonStore((state) => state.boxes);
-  const addCarton = useCartonStore((state) => state.addCarton);
+  const { boxes, addCarton } = useCartonStore();
   const { t } = useTranslation();
 
   return (
