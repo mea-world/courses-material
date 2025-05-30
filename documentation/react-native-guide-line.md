@@ -9,14 +9,8 @@ This guide provides the essential steps to start a React Native project using **
 To get started, run the command:
 
 ```bash
-npx create-expo-app
+yarn create expo-app -t expo-template-blank-typescript
 ```
-
-Select the **Base template** (or specify `--template blank` in the CLI).
-
-Official documentation: [React Native Setup](https://reactnative.dev/docs/set-up-your-environment)
-
----
 
 ## Project Structure
 
@@ -24,7 +18,7 @@ The base template will create a structure like this:
 
 ```
 my-app/
-├── App.js
+├── App.tsx
 ├── package.json
 ├── node_modules/
 ├── assets/
