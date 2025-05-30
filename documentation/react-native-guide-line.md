@@ -9,7 +9,7 @@ This guide provides the essential steps to start a React Native project using **
 To get started, run the command:
 
 ```bash
-npx create-expo-app@latest --template
+npx create-expo-app@latest --template blank
 ```
 
 Select the **Base template** (or specify `--template blank` in the CLI).
